@@ -16,7 +16,7 @@ public class OrderSpecService {
   public OrderSpecService(OrderRepository repo){ this.repo = repo; }
 
   public Page<OrderListFullDTO> search(OrderFilter f, Pageable pageable) {
-    var spec = OrderSpecs.statusEq(f.status())
+      var spec = OrderSpecs.statusEq(f.status())
         .and(OrderSpecs.statusesIn(f.statuses()))
         .and(OrderSpecs.createdBetween(f.from(), f.to()))
         .and(OrderSpecs.qInCustomer(f.q()))

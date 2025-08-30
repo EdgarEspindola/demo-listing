@@ -1,2 +1,20 @@
 GET http://localhost:8080/orders?status=PAID&size=20&page=0
 Accept: application/json
+
+### ---- Criteria (Light) ----
+GET http://localhost:8080/orders-adv/criteria/light?status=PAID&q=alice&page=0&size=20
+
+### ---- Criteria (Light) ----
+GET http://localhost:8080/orders-adv/criteria/light?statuses=PAID&statuses=PENDING&from=2025-08-01T00:00:00&to=2025-09-01T00:00:00
+
+### ---- Criteria Full ----
+GET http://localhost:8080/orders-adv/criteria/full?paymentStatus=PAID&customerEmail=@acme.com
+
+### ----- QueryDsl Light ----
+GET http://localhost:8080/orders-adv/querydsl/light?minAmount=50&maxAmount=500&q=ali
+
+### ---- QueryDsl Full ----
+GET http://localhost:8080/orders-adv/querydsl/full?paymentMethod=CARD&status=PAID
+
+### ---- Specifications ----
+GET http://localhost:8080/orders-adv/specs/full?q=bob&statuses=PAID&statuses=PENDING

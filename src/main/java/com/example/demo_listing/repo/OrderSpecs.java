@@ -3,9 +3,11 @@ package com.example.demo_listing.repo;
 import org.springframework.data.jpa.domain.Specification;
 
 import com.example.demo_listing.domain.Customer;
+import com.example.demo_listing.domain.Order;
 import com.example.demo_listing.domain.Payment;
 
-import jakarta.persistence.criteria.*;
+import jakarta.persistence.criteria.Join;
+import jakarta.persistence.criteria.JoinType;
 
 /*
  * Útil para reusar filtros y testear cada uno. Aquí devolvemos entidades con fetch join para evitar N+1 y luego mapeamos a DTO. 
